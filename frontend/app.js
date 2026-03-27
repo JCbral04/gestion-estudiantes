@@ -2,7 +2,7 @@
 // CONFIGURACIÓN
 // ============================================
 // URL del backend (localhost para desarrollo)
-const API_URL = 'http://localhost:3000/api';
+const API_URL = 'https://gestion-estudiantes-api-14x6.onrender.com/api';
 
 // Elementos del DOM
 const form = document.getElementById('formEstudiante');
