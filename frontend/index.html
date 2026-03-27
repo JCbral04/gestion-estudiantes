@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Estudiantes</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <h1>Sistema de Gestión de Estudiantes</h1>
+            </div>
+            <p class="subtitle">Registro y administración de inscripciones</p>
+        </header>
+
+        <!-- Formulario de Registro -->
+        <section class="form-section">
+            <div class="card">
+                <h2><i class="fas fa-user-plus"></i> Registrar Nuevo Estudiante</h2>
+                
+                <form id="formEstudiante" class="form">
+                    <div class="form-group">
+                        <label for="nombre">
+                            <i class="fas fa-user"></i> Nombre Completo
+                        </label>
+                        <input 
+                            type="text" 
+                            id="nombre" 
+                            name="nombre" 
+                            placeholder="Ej: María González" 
+                            required
+                            autocomplete="name"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="correo">
+                            <i class="fas fa-envelope"></i> Correo Electrónico
+                        </label>
+                        <input 
+                            type="email" 
+                            id="correo" 
+                            name="correo" 
+                            placeholder="Ej: maria@email.com" 
+                            required
+                            autocomplete="email"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="programa">
+                            <i class="fas fa-book"></i> Programa o Curso
+                        </label>
+                        <select id="programa" name="programa" required>
+                            <option value="">Selecciona un programa...</option>
+                            <option value="Desarrollo Web">Desarrollo Web</option>
+                            <option value="Base de Datos">Base de Datos</option>
+                            <option value="Programación JavaScript">Programación JavaScript</option>
+                            <option value="Diseño UX/UI">Diseño UX/UI</option>
+                            <option value="Marketing Digital">Marketing Digital</option>
+                            <option value="Análisis de Datos">Análisis de Datos</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" id="btnGuardar">
+                        <i class="fas fa-save"></i> Guardar Estudiante
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Lista de Estudiantes -->
+        <section class="list-section">
+            <div class="card">
+                <div class="list-header">
+                    <h2><i class="fas fa-list"></i> Estudiantes Registrados</h2>
+                    <div class="stats">
+                        <span id="totalEstudiantes">0 estudiantes</span>
+                    </div>
+                </div>
+
+                <!-- Loading State -->
+                <div id="loading" class="loading hidden">
+                    <div class="spinner"></div>
+                    <p>Cargando estudiantes...</p>
+                </div>
+
+                <!-- Empty State -->
+                <div id="emptyState" class="empty-state hidden">
+                    <i class="fas fa-inbox"></i>
+                    <p>No hay estudiantes registrados aún</p>
+                </div>
+
+                <!-- Tabla de Estudiantes -->
+                <div class="table-container">
+                    <table id="tablaEstudiantes" class="table hidden">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Correo</th>
+                                <th>Programa</th>
+                                <th>Fecha de Registro</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyEstudiantes">
+                            <!-- Los estudiantes se cargarán aquí dinámicamente -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Notificaciones -->
+        <div id="notificaciones" class="notificaciones"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
