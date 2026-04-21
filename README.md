@@ -1,5 +1,11 @@
 # Sistema de Gestión de Estudiantes
 
+## miembros del equipo
+ - Juan Esteban Cabral Bautista 
+ - Óscar Fabián Forero Díaz 
+ - Manuel Osorio Feo
+ - Juan Camilo Céspedes 
+
 Aplicación web full-stack para el registro y administración de estudiantes. Permite crear, listar y eliminar estudiantes con una interfaz moderna y responsive.
 
 ## Características
